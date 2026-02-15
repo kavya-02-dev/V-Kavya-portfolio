@@ -13,16 +13,21 @@ export function Providers({ children }: { children: React.ReactNode }) {
     let frames = 0;
     let last = performance.now();
     let raf: number;
+
     const loop = (now: number) => {
       frames++;
+
       if (now - last >= 1000) {
         setSystemStatus({ fps: frames });
         frames = 0;
         last = now;
       }
+
       raf = requestAnimationFrame(loop);
     };
+
     raf = requestAnimationFrame(loop);
+
     return () => cancelAnimationFrame(raf);
   }, [setSystemStatus]);
 
@@ -30,16 +35,26 @@ export function Providers({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const ping = async () => {
       const ms = await getDbLatency();
-      setSystemStatus({ dbLatency: ms, backendConnected: ms !== null });
+
+      setSystemStatus({
+        dbLatency: ms,
+        backend: ms !== null
+      });
     };
+
     ping();
+
     const iv = setInterval(ping, 30000);
+
     return () => clearInterval(iv);
   }, [setSystemStatus]);
 
   // Apply security mode class
   useEffect(() => {
-    document.documentElement.classList.toggle('security-mode-active', securityMode);
+    document.documentElement.classList.toggle(
+      'security-mode-active',
+      securityMode
+    );
   }, [securityMode]);
 
   return (
