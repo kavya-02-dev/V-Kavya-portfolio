@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # V Kavya — Portfolio Website
 
 > AI × Security × Full-Stack Engineer Portfolio
@@ -300,3 +301,6 @@ A counter in the bottom-left shows how many eggs you've found.
 ---
 
 Built with 💙 for V Kavya
+=======
+# V-Kavya-portfolio
+>>>>>>> 4d322984715b66ec80daf35f50a7c282631d31d2
