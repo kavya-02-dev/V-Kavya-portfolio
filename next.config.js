@@ -45,12 +45,28 @@ const nextConfig = {
             key: 'Content-Security-Policy',
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-eval' 'unsafe-inline'",
+
+              // ✅ Allow Google Analytics + Clarity scripts
+              "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://www.clarity.ms",
+
+              // styles
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+
+              // fonts
               "font-src 'self' https://fonts.gstatic.com",
-              "img-src 'self' data: blob: https:",
-              "connect-src 'self' https://*.supabase.co wss://*.supabase.co",
-              "frame-src 'none'",
+
+              // images
+              "img-src 'self' data: blob: https://www.google-analytics.com https://www.clarity.ms https:",
+
+              // API connections
+              "connect-src 'self' https://*.supabase.co wss://*.supabase.co https://www.google-analytics.com https://region1.google-analytics.com https://www.clarity.ms",
+
+              // allow GTM frame
+              "frame-src https://www.googletagmanager.com",
+
+              // base restrictions
+              "object-src 'none'",
+              "base-uri 'self'",
             ].join('; '),
           },
         ],
