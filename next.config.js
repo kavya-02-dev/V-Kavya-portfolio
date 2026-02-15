@@ -51,35 +51,36 @@ const nextConfig = {
           },
 
           {
-            key: 'Content-Security-Policy',
-            value: [
+  key: 'Content-Security-Policy',
+  value: [
 
-              "default-src 'self'",
+    "default-src 'self'",
 
-              // ✅ Google Analytics + Microsoft Clarity
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://www.clarity.ms https://scripts.clarity.ms",
+    // scripts
+    "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://www.clarity.ms https://scripts.clarity.ms",
 
-              // styles
-              "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+    // styles
+    "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
 
-              // fonts
-              "font-src 'self' https://fonts.gstatic.com",
+    // fonts
+    "font-src 'self' https://fonts.gstatic.com",
 
-              // images
-              "img-src 'self' data: blob: https://www.google-analytics.com https://www.clarity.ms https://scripts.clarity.ms https:",
+    // images
+    "img-src 'self' data: blob: https://www.google-analytics.com https://www.clarity.ms https://scripts.clarity.ms https:",
 
-              // connections
-              "connect-src 'self' https://*.supabase.co wss://*.supabase.co https://www.google-analytics.com https://region1.google-analytics.com https://www.clarity.ms https://scripts.clarity.ms",
+    // FIXED: add d.clarity.ms
+    "connect-src 'self' https://*.supabase.co wss://*.supabase.co https://www.google-analytics.com https://region1.google-analytics.com https://www.clarity.ms https://scripts.clarity.ms https://d.clarity.ms",
 
-              // frames
-              "frame-src https://www.googletagmanager.com https://www.clarity.ms",
+    // frames
+    "frame-src https://www.googletagmanager.com https://www.clarity.ms",
 
-              // security hardening
-              "object-src 'none'",
-              "base-uri 'self'",
+    // security hardening
+    "object-src 'none'",
+    "base-uri 'self'",
 
-            ].join('; '),
-          },
+  ].join('; '),
+}
+
 
         ],
       },
