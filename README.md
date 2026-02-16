@@ -50,7 +50,7 @@ cp .env.example .env.local
 
 ---
 
-### Step 5 — Run Locally
+### Step 4 — Run Locally
 
 ```bash
 npm run dev
