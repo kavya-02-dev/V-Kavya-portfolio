@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # V Kavya — Portfolio Website
 
 > AI × Security × Full-Stack Engineer Portfolio
@@ -34,21 +34,10 @@ npm install
    - **Project URL** → `NEXT_PUBLIC_SUPABASE_URL`
    - **anon/public key** → `NEXT_PUBLIC_SUPABASE_ANON_KEY`
 
----
-
-### Step 3 — Set Up Email (Resend — FREE)
-
-**This is what makes the contact form actually send emails to you.**
-
-1. Go to **https://resend.com** → Sign up (free, no credit card)
-2. Go to **API Keys** → **Create API Key** → Copy it
-3. In `.env.local`, set: `RESEND_API_KEY=re_your_key_here`
-
-That's it. Free tier = 100 emails/day. The form sends directly to `kavya0002u@gmail.com`.
 
 ---
 
-### Step 4 — Configure Environment
+### Step 3 — Configure Environment
 
 ```bash
 # Copy the example env file
@@ -61,7 +50,7 @@ cp .env.example .env.local
 
 ---
 
-### Step 4 — Run Locally
+### Step 5 — Run Locally
 
 ```bash
 npm run dev
@@ -300,7 +289,6 @@ A counter in the bottom-left shows how many eggs you've found.
 
 ---
 
-Built with 💙 for V Kavya
 =======
-# V-Kavya-portfolio
->>>>>>> 4d322984715b66ec80daf35f50a7c282631d31d2
+# V-Kavya-portfolio 🍁
+
